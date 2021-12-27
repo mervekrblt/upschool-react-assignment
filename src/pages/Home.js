@@ -3,8 +3,8 @@ import Search from "../components/Search"
 
 const Home = () => {
 return <>
-<Search></Search>
-<About></About>
+  <Search></Search>
+  <About></About>
 </>
 }
 export default Home
