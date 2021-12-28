@@ -22,7 +22,7 @@ const Home = () =>
 
   const getAllPosts = async () =>
   {
-    const res = await axios.get(`${BASE_URL}`)
+    const res = await axios.get(BASE_URL)
     const data = res.data;
     const slice = data.slice(offset - 1, offset - 1 + postsPerPage)
 
@@ -48,19 +48,22 @@ const Home = () =>
   return <>
     <h1 className="text-center my-5">NozamA</h1>
     <Search></Search>
-    <div className="container my-5">
-      <div className="card-group">
+    <div className="container">
+      <div className="row">
         {posts.map(product =>
-          <ProductCard
-            key={product.id}
-            image={product.image}
-            title={product.title}
-            price={product.price}
-            description={product.description}
-          >
-          </ProductCard>
+          <div className='col-md-4 py-3' key={product.id}>
+            <ProductCard
+              image={product.image}
+              title={product.title}
+              price={product.price}
+              id={product.id}
+              description={product.description}
+            >
+            </ProductCard>
+          </div>
         )}
       </div>
+
     </div>
 
     <ReactPaginate

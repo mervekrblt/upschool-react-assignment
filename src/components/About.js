@@ -26,10 +26,10 @@ const About = () =>
           </div>
           <div className="col-md-5 drop-cap-text">
             <h2>Technologies That I Used</h2>
-            <div class="list-group">
+            <div className="list-group">
               {technologies.map(data =>
                 // eslint-disable-next-line react/jsx-no-target-blank
-                <a href={data.url} key={data.id} target="_blank" rel="noopener   noreferrer" class="list-group-item list-group-item-action list-group-item-light">
+                <a href={data.url} key={data.id} target="_blank" rel="noopener   noreferrer" className="list-group-item list-group-item-action list-group-item-light">
                   {data.title}
                 </a>)
               }
