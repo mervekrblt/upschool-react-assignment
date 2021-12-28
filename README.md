@@ -1,17 +1,16 @@
 
 ### Task Lists
 
-- [ ] Cretae a logo
 - [ ] Create Routes and components
   - [x] Create all routes
-  - [ ] Home Page
+  - [x] Home Page
     - [x] Navbar
     - [x] Footer
   - [ ] Products Page
-    - [ ] Product Card components
-  - [ ] About Page
+    - [x] Product Card components
+  - [x] About Page
   - [ ] Search Page
-    - [ ] Search component
+    - [x] Search component
   - [ ] Product Details Page
     - [ ] Product Details Card component
-- [ ] Products in home page with pagination
+- [x] Products in home page with pagination

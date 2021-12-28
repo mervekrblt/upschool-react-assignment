@@ -46,9 +46,9 @@ const Home = () =>
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset])
   return <>
+    <h1 className="text-center my-5">NozamA</h1>
     <Search></Search>
-    <About></About>
-    <div className="container">
+    <div className="container my-5">
       <div className="card-group">
         {posts.map(product =>
           <ProductCard
@@ -72,7 +72,10 @@ const Home = () =>
       onPageChange={handlePageClick}
       containerClassName={"pagination"}
       subContainerClassName={"pages pagination"}
-      activeClassName={"active"} />
+      activeClassName={"active"}
+    />
+
+    <About></About>
 
   </>
 }
