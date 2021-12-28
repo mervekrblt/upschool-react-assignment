@@ -8,7 +8,7 @@ const Search = (props) =>
   const urlParams = new URLSearchParams(location.search)
   const search = urlParams.get("q")
   const [q, setQ] = useState(search)
-  console.log(location)
+  //console.log(location)
 
   const inputHandler = (e) =>
   {
