@@ -14,11 +14,17 @@ const Search = (props) =>
   {
     e.preventDefault()
     // PROBLEMMM
-      //console.log(e.target.search.value)
-      setQ(e.target.search.value)
-      //console.log(q)
-      //navigation(`/search?q=${q}`)
-    navigation(`/search?q=${e.target.search.value}`)
+    console.log(e.target.search.value)
+    setQ(e.target.search.value)
+    navigation(`/search?q=${q}`)
+    console.log(q)
+
+    //navigation(`/search?q=${e.target.search.value}`)
+  }
+
+  if (location.pathname === '/search')
+  {
+    // setQ("") yapınca infinite loop hatası, use Effect mi kullanmalıyım ?
   }
 
 

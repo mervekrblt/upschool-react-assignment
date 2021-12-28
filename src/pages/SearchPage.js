@@ -6,7 +6,7 @@ const SearchPage = () => {
   const urlParams = new URLSearchParams(location.search)
   const search = urlParams.get("q")
   console.log(search)
-  if(location.path === '/search') {
+  if(location.pathname === '/search') {
     
   }
 return <>
