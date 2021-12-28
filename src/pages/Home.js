@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import ReactPaginate from 'react-paginate';
-import axios from 'axios'
 import BASE_URL from "../BASE_URL"
 import About from "../components/About"
 import Search from "../components/Search"
@@ -9,48 +8,39 @@ import './Home.css'
 
 const Home = () =>
 {
-  const [postsPerPage] = useState(3);
-  const [offset, setOffset] = useState(1);
-  const [posts, setAllPosts] = useState([]);
-  const [pageCount, setPageCount] = useState(0)
-  const getPostData = (data) =>
-  {
-    return (
-      data.map(product => product)
-    )
-  }
+  const [currentPage, setCurrentPage] = useState(0);
+  const [data, setData] = useState([]);
 
-  const getAllPosts = async () =>
-  {
-    const res = await axios.get(BASE_URL)
-    const data = res.data;
-    const slice = data.slice(offset - 1, offset - 1 + postsPerPage)
-
-    // For displaying Data
-    const postData = getPostData(slice)
-
-    // Using Hooks to set value
-    setAllPosts(postData)
-    setPageCount(Math.ceil(data.length / postsPerPage))
-  }
-
-  const handlePageClick = (event) =>
-  {
-    const selectedPage = event.selected;
-    setOffset(selectedPage + 1)
-  };
+  const PER_PAGE = 3;
+  const offset = currentPage * PER_PAGE;
+  const currentPageData = data
+    .slice(offset, offset + PER_PAGE)
+  const pageCount = Math.ceil(data.length / PER_PAGE);
 
   useEffect(() =>
   {
-    getAllPosts()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [offset])
+    fetchData();
+  }, []);
+  function fetchData()
+  {
+    fetch(BASE_URL)
+      .then((res) => res.json())
+      .then((data) =>
+      {
+        setData(data);
+      });
+  }
+
+  function handlePageClick({ selected: selectedPage })
+  {
+    setCurrentPage(selectedPage);
+  }
   return <>
     <h1 className="text-center my-5">NozamA</h1>
     <Search></Search>
     <div className="container">
       <div className="row">
-        {posts.map(product =>
+        {currentPageData.map(product =>
           <div className='col-md-4 py-3' key={product.id}>
             <ProductCard
               image={product.image}
