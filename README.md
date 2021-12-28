@@ -6,11 +6,11 @@
   - [x] Home Page
     - [x] Navbar
     - [x] Footer
-  - [ ] Products Page
+  - [x] Products Page
     - [x] Product Card components
   - [x] About Page
   - [ ] Search Page
     - [x] Search component
-  - [ ] Product Details Page
-    - [ ] Product Details Card component
+  - [x] Product Details Page
+    - [x] Product Details Card component
 - [x] Products in home page with pagination

@@ -1,31 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const Search = (props) =>
 {
   const location = useLocation()
   const navigation = useNavigate()
-  const urlParams = new URLSearchParams(location.search)
-  const search = urlParams.get("q")
-  const [q, setQ] = useState(search)
+  //const urlParams = new URLSearchParams(location.search)
+  //const search = urlParams.get("q")
+  const [q, setQ] = useState("")
   //console.log(location)
 
   const inputHandler = (e) =>
   {
     e.preventDefault()
     // PROBLEMMM
-    console.log(e.target.search.value)
+    //console.log(e.target.search.value)
     setQ(e.target.search.value)
-    navigation(`/search?q=${q}`)
     console.log(q)
-
-    //navigation(`/search?q=${e.target.search.value}`)
+    navigation(`/search?q=${e.target.search.value}`)
   }
 
-  if (location.pathname === '/search')
-  {
-    // setQ("") yapınca infinite loop hatası, use Effect mi kullanmalıyım ?
-  }
+  useEffect(() => {
+    //if(location.search === "")
+    if(location.search.length === 0) {
+      console.log("setQ sıfırla")
+      setQ("")
+      console.log(q)
+    }
+  }, [location, q])
 
 
   return <>
