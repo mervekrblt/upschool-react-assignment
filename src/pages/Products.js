@@ -21,6 +21,7 @@ const Products = () =>
     // call this function when page is created
     getAllProducts()
     console.log(products)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   console.log(products)
