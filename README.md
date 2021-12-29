@@ -1,6 +1,6 @@
-# Dummy Amazon Clone with Bootstrap - NozamA :joy:
+# Dummy Amazon Clone with React - NozamA :joy:
 
-In this assignment, I tried to build a dummy amazon clone.
+In this assignment, I tried to build a responsive dummy amazon clone.
 
 Its name is NozamA, very creative, I know :sunglasses:
 
