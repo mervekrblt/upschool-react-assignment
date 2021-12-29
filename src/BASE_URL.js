@@ -1,3 +1,3 @@
-const BASE_URL = "http://localhost:4000/products"
+const BASE_URL = "https://my-json-server.typicode.com/mervekrblt/upschool-react-assignment"
 
 export default BASE_URL
