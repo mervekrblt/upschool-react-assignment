@@ -8,12 +8,14 @@ import TableItem from '../components/products/TableItem'
 const Products = () =>
 {
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const getAllProducts = async () =>
   {
     const res = await axios.get(BASE_URL)
     const data = res.data
     setProducts(data)
+    setLoading(false)
   }
 
   useEffect(() =>
@@ -26,7 +28,15 @@ const Products = () =>
 
   console.log(products)
   return <>
-    <div className="table-responsive">
+    {loading && <div className="text-center">
+      <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    }
+
+    {!loading && 
+    <div className="table-responsive container">
       <table className="table table-hover table-dark mt-5">
       <thead>
         <tr>
@@ -51,9 +61,8 @@ const Products = () =>
         )}
       </tbody>
     </table>
-    </div>
+    </div>}
     
-
   </>
 }
 export default Products

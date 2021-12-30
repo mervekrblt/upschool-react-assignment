@@ -30,7 +30,7 @@ const SearchPage = () =>
   return <>
     <h1 className="text-center my-5">What are you looking for...</h1>
     <Search ></Search>
-    {!products.length && <div className="container my-5">
+    {(!products.length && search !== null) && <div className="container my-5">
       <div className="alert alert-warning" role="alert">
         <h2>There is no item about "{search}" try again</h2>
         <p className="fw-bolder fst-italic">Hint: Search for ssd, laptop etc. </p>
@@ -38,6 +38,7 @@ const SearchPage = () =>
       </div>
 
     </div>}
+
     <div className="container">
       <div className="row">
         {products.map(product => <div className='col-md-4 py-3' key={product.id}>

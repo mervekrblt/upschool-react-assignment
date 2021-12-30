@@ -20,7 +20,7 @@ const ProductDetails = () =>
       })
 
   }
-  console.log(loading)
+  //console.log(loading)
   useEffect(() =>
   {
     getProduct()
@@ -28,9 +28,12 @@ const ProductDetails = () =>
   }, [])
 
   return <>
-    {loading && <div class="spinner-border text-secondary mx-auto" role="status">
+    {loading && <div className="text-center">
+      <div class="spinner-border text-secondary" role="status">
       <span class="visually-hidden">Loading...</span>
-    </div>}
+    </div>
+    </div>
+    }
     {!loading && <div className="container">
       <div className="row my-5">
         <div className="col-md-6 text-center">
