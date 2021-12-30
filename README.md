@@ -17,6 +17,30 @@ You can see all products, search specific product and display each product detai
 - Fake Store API
 - JSON-Server 
 
+## Previews
+
+- Desktop
+
+![Desktop Preview](previews/web.gif)
+
+- Mobile
+
+![Mobile Preview](previews/mobile.gif)
+
+## How to install
+
+```bash
+git pull https://github.com/mervekrblt/upschool-react-assignment.git
+
+npm install
+
+npm start
+```
+## Run local database
+```bash
+npm run database
+```
+
 ### Task Lists
 
 - [x] Create Routes and components

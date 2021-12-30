@@ -33,7 +33,7 @@ const Search = (props) =>
   return <>
     <div className="container my-5">
       <form onSubmit={inputHandler} className="mx-auto">
-        <input type="search" className="form-control w-75 my-3 mx-auto clear" name="search" defaultValue={q} />
+        <input type="search" className="form-control w-75 my-3 mx-auto clear" autocomplete="off" name="search" defaultValue={q} />
         <div className="text-center">
           <button className="btn btn-success me-3" type="submit">Search</button>
         </div>
