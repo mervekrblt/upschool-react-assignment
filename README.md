@@ -17,6 +17,12 @@ You can see all products, search specific product and display each product detai
 - Fake Store API
 - JSON-Server 
 
+## Design
+| Homepage| Details |
+| ------ | ----- |
+| <img src="design/home.png" width="200"> | <img src="design/details.png" width="200"> |
+
+
 ## Previews
 
 - Desktop
